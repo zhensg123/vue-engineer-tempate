@@ -89,7 +89,7 @@ module.exports = {
         config.externals(externals)
       }
       config.plugin('html').tap(args => {
-        args[0].minify.minifyCSS = true // 压缩 index.html 中的css
+        args[0].minify && (args[0].minify.minifyCSS = true) // 压缩 index.html 中的css
         return args
       })
       /** 注意：gzip需要nginx进行配合 */

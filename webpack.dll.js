@@ -7,8 +7,11 @@ module.exports = {
   mode: 'production',
   devtool: 'source-map',
   entry: {
+    vue: ['vue'],
     vuex: ['vuex'],
-    vueRouter: ['vue-router']
+    ELEMENT: ['element-ui'],
+    vueRouter: ['vue-router'],
+    axios: ['axios']
   },
   output: {
     path: path.resolve(__dirname, 'dll'),
