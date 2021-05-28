@@ -6,12 +6,10 @@
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
 import homeApi from './api/Home'
 export default {
   name: 'Home',
   components: {
-    HelloWorld
   },
   methods: {
     testApi () {
