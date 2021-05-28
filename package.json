@@ -6,7 +6,7 @@
     "serve": "vue-cli-service serve --mode development",
     "build:test": "vue-cli-service build --mode test",
     "build:prod": "vue-cli-service build --mode prod",
-    "dll": "rimraf /dll/.dll && webpack --config webpack.dll.js",
+    "dll": "rimraf dll && webpack --config webpack.dll.js",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
