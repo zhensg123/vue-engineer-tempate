@@ -3,6 +3,7 @@ const path = require('path')
 const AddAssetHtmlWebpackPlugin = require('add-asset-html-webpack-plugin') // 给 index.html 注入 dll 生成的链接库
 const CompressionWebpackPlugin = require('compression-webpack-plugin')
 const { DllReferencePlugin } = require('webpack')
+const useAnalyzer = process.env.use_analyzer
 const {
   DLL_DIR,
   IS_PRODUCTION,
@@ -80,6 +81,9 @@ module.exports = {
       .test(/\.(png|jpe?g|gif|webp|svg)(\?.*)?$/)
       .exclude.add(path.join(__dirname, 'src/icons'))
       .end()
+    useAnalyzer && config
+      .plugin('webpack-bundle-analyzer')
+      .use(require('webpack-bundle-analyzer').BundleAnalyzerPlugin)
     if (IS_PRODUCTION) {
       if (USE_CDN) {
         config.plugin('html').tap(args => {
